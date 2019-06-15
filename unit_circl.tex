@@ -1,0 +1,38 @@
+\documentclass[tikz,dvipsnames]{standalone}
+\usetikzlibrary{backgrounds}
+\usetikzlibrary{arrows}
+\usetikzlibrary{calc}
+\usetikzlibrary{arrows.meta}
+
+\begin{document}
+\tikzset{
+    dimen/.style={<->,>=latex,every rectangle node/.style={fill=white,midway,font=\scriptsize}},
+}
+ \begin{tikzpicture}[
+    scale=2,
+    show background rectangle,
+    tight background=0,
+    background rectangle/.style={fill=white},
+ ]
+    \coordinate (B) at (45:1);
+    \coordinate (O) at (0,0);
+    \coordinate (X) at (1,0);
+    \coordinate (Y) at (0,1);
+    
+    \draw (O) -- (1.1,0);
+    \draw (O) -- (0,1.1);
+    \draw (X) -- node [pos=2,yshift=5] {$|0\rangle$} (1.1,0);
+    \draw (Y) -- node [pos=2,xshift=5] {$|1\rangle$} (0,1.1);
+    \node (QB) at ($ (B)+(0.2,0.3)$) 
+    {$\textcolor{blue}{A}\,|0\rangle+\textcolor{red}{B}\,|1\rangle$};
+    \draw (QB) -- (B);    
+    \draw (O) -- node[above]{\footnotesize 1} (B);
+    \draw[dimen,blue] (B) -- ($(O)!(B)!(Y)$) node{$A$};
+    \draw[dimen,red ] (B) -- ($(O)!(B)!(X)$) node{$B$};
+    
+    \draw[thick] (1,0) arc (0:90:1);
+    \filldraw[fill=blue!30, draw=blue] (X) circle(0.02);  
+    \filldraw[fill=red!30, draw=red] (Y) circle(0.02);  
+    \draw[fill=white] (B) circle(0.02);   
+\end{tikzpicture}
+\end{document}

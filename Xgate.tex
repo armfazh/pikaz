@@ -1,0 +1,20 @@
+\documentclass[tikz,dvipsnames]{standalone}
+\usetikzlibrary{backgrounds}
+\usetikzlibrary{calc}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{positioning}
+
+\begin{document}
+ \begin{tikzpicture}[
+    show background rectangle,
+    tight background=0,
+    background rectangle/.style={fill=white},
+    node distance=0.5,
+ ]
+    \node (X0) {$A\,|0\rangle+B\,|1\rangle$};
+    \node[right=of X0,draw, fill=Green!50] (XX) {$X$};
+    \node[right=of XX] (Y0) {$B\,|0\rangle+A\,|1\rangle$};
+    \draw (X0) -- (XX) -- (Y0);
+    
+\end{tikzpicture}
+\end{document}

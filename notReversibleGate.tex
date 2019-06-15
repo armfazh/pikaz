@@ -1,0 +1,27 @@
+\documentclass[tikz,dvipsnames]{standalone}
+\usetikzlibrary{backgrounds}
+\usetikzlibrary{calc,positioning}
+
+\begin{document}
+ \begin{tikzpicture}[
+    show background rectangle,
+    tight background=0,
+    background rectangle/.style={fill=white},
+ ]
+    \node (X)  {$0$};
+    \node[right=of X]  (Y) {$1$};
+    \draw (X) -- (Y);
+    \filldraw[fill=cyan!30] ($(X)!0.6!(Y)$)-- 
+        ++(150:0.3) -- ++(270:0.3)
+        -- cycle 
+        ++(0.04,0) 
+        circle (0.04) ;
+    
+    \node[right=of Y] (Z) {$0$};
+    \draw (Y) -- (Z);    
+    \filldraw[fill=cyan!30] ($(Y)!0.6!(Z)$)--  
+        ++(150:0.3) -- ++(270:0.3) -- cycle 
+        ++(0.04,0) circle (0.04) ;   
+   
+\end{tikzpicture}
+\end{document}
