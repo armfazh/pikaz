@@ -1,3 +1,8 @@
+# pdflatex
+# tikz
+# exiftool
+
+
 pngs= $(patsubst %.tex,%.png,$(wildcard *.tex))
 pdfs= $(patsubst %.tex,%.pdf,$(wildcard *.tex))
 
