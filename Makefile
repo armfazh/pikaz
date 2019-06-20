@@ -16,7 +16,7 @@ all: $(pngs)
 
 %.png: %.pdf
 	@echo "Converting" $@
-	@convert -units PixelsPerInch -density 500 $^ $@
+	@convert -units PixelsPerInch -density 300 $^ $@
 	@exiftool -overwrite_original \
 		-author="Armando Faz" \
 		-description="Quantum gates, $*" \
